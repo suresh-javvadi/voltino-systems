@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
+import { ProcessSection } from "@/components/ProcessSection";
 
 const Landing = () => {
   return (
@@ -10,6 +11,7 @@ const Landing = () => {
       <main>
         <HeroSection />
         <ExpertiseSection />
+        <ProcessSection />
       </main>
     </div>
   );
