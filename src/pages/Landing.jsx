@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { ExpertiseSection } from "@/components/ExpertiseSection";
 
 const Landing = () => {
   return (
@@ -8,6 +9,7 @@ const Landing = () => {
       <Header />
       <main>
         <HeroSection />
+        <ExpertiseSection />
       </main>
     </div>
   );
