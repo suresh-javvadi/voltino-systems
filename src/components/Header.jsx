@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Our Expertise", href: "#expertise" },
   { label: "Process", href: "#process" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
+  { label: "Clients", href: "#clients" },
 ];
 
 export function Header() {

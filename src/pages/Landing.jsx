@@ -5,6 +5,7 @@ import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
+import { ClientsSection } from "@/components/ClientsSection";
 
 const Landing = () => {
   return (
@@ -16,6 +17,7 @@ const Landing = () => {
         <ProcessSection />
         <WhyChooseUsSection />
         <PortfolioSection />
+        <ClientsSection />
       </main>
     </div>
   );
