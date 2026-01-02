@@ -8,7 +8,9 @@ export function Footer() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="w-4 h-4 text-primary-foreground" />
+              <span className="text-primary-foreground font-bold text-xl">
+                V
+              </span>
             </div>
             <span className="text-lg font-semibold text-foreground">
               Voltino Systems
