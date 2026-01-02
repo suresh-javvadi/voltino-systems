@@ -7,6 +7,7 @@ import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { ClientsSection } from "@/components/ClientsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Landing = () => {
   return (
@@ -21,6 +22,7 @@ const Landing = () => {
         <ClientsSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 };
