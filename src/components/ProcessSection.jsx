@@ -48,17 +48,24 @@ const processSteps = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-20 md:py-32 relative overflow-hidden">
+    <section
+      id="process"
+      className="
+        relative
+        overflow-hidden
+        py-20 sm:py-24 lg:py-28
+      "
+    >
       {/* Background */}
       <div className="absolute inset-0 gradient-navy-radial" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Product Development <span className="text-gradient">Process</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-base sm:text-lg text-muted-foreground">
             A systematic approach ensuring quality delivery at every stage of
             your product journey.
           </p>
@@ -66,27 +73,27 @@ export function ProcessSection() {
 
         {/* Process Timeline */}
         <div className="relative">
-          {/* Connecting line */}
+          {/* Connecting line (desktop only) */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-6">
             {processSteps.map((step, index) => (
               <div
                 key={step.title}
-                className="relative flex flex-col items-center text-center group"
+                className="relative flex flex-col items-center text-center space-y-3"
               >
                 {/* Step number */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold text-primary bg-background px-2 z-10">
+                <div className="text-xs font-bold text-primary bg-background px-2">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* Icon circle */}
-                <div className="w-16 h-16 rounded-full bg-secondary border-2 border-border flex items-center justify-center mb-4 group-hover:border-primary group-hover:bg-primary/10 transition-all duration-300 relative z-10">
+                {/* Icon */}
+                <div className="w-16 h-16 rounded-full bg-secondary border-2 border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all duration-300">
                   <step.icon className="w-7 h-7 text-primary" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-base font-semibold text-foreground mb-2">
+                <h3 className="text-base font-semibold text-foreground">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
