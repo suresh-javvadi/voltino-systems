@@ -14,34 +14,49 @@ export function ClientsSection() {
   return (
     <section
       id="clients"
-      className="py-20 md:py-24 gradient-navy border-t border-border/50"
+      className="
+        gradient-navy-radial
+        border-t border-border/50
+        py-20 sm:py-24 lg:py-28
+      "
     >
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
             Trusted by <span className="text-gradient">Industry Leaders</span>
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground">
             Partnering with innovative companies across power electronics,
             aerospace, and IoT sectors.
           </p>
         </div>
 
         {/* Clients Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 md:gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-3 sm:gap-4 md:gap-6">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="group flex flex-col items-center justify-center p-4 rounded-xl bg-secondary/30 border border-border hover:border-primary/30 transition-all duration-300"
+              className="
+                group
+                flex flex-col items-center justify-center
+                p-3 sm:p-4
+                rounded-lg
+                bg-secondary/30
+                border border-border
+                transition-all duration-300
+                hover:border-primary/30
+              "
             >
-              {/* Placeholder logo */}
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-muted flex items-center justify-center mb-2 group-hover:bg-primary/10 transition-colors">
-                <span className="text-sm md:text-base font-bold text-muted-foreground group-hover:text-primary transition-colors">
+              {/* Logo */}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                <span className="text-xs sm:text-sm md:text-base font-bold text-muted-foreground group-hover:text-primary transition-colors">
                   {client.logo}
                 </span>
               </div>
-              <span className="text-xs text-muted-foreground text-center line-clamp-1">
+
+              {/* Name (desktop only) */}
+              <span className="hidden sm:block mt-1 text-xs text-muted-foreground text-center line-clamp-1">
                 {client.name}
               </span>
             </div>

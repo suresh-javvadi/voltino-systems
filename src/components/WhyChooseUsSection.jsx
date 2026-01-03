@@ -35,25 +35,34 @@ const valueProps = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 gradient-navy">
+    <section className="gradient-navy pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Why Choose <span className="text-gradient">Voltino</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Partner with a team that's committed to your product's success from
+          <p className="text-base sm:text-lg text-muted-foreground">
+            Partner with a team that’s committed to your product’s success from
             day one.
           </p>
         </div>
 
         {/* Value Props Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {valueProps.map((prop) => (
             <div
               key={prop.title}
-              className="group text-center p-6 rounded-xl bg-secondary/30 border border-border hover:border-primary/50 transition-all duration-300 hover-lift"
+              className="
+                group
+                text-center
+                p-5 sm:p-6 lg:p-8
+                rounded-xl
+                bg-secondary/30
+                border border-border
+                transition-all duration-300
+                hover:border-primary/50 hover-lift
+              "
             >
               {/* Icon */}
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">

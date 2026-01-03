@@ -43,15 +43,19 @@ export function ExpertiseSection() {
   return (
     <section
       id="expertise"
-      className="py-12 sm:py-16 md:py-24 gradient-navy relative"
+      className="
+        relative
+        gradient-navy-radial
+        py-20 sm:py-24 lg:py-28
+      "
     >
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Our <span className="text-gradient">Expertise</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-base sm:text-lg text-muted-foreground">
             Comprehensive power electronics solutions from concept to
             production, backed by a decade of industry experience.
           </p>
@@ -59,10 +63,18 @@ export function ExpertiseSection() {
 
         {/* Expertise Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {expertiseItems.map((item, index) => (
+          {expertiseItems.map((item) => (
             <div
               key={item.title}
-              className="group relative p-6 md:p-8 rounded-xl gradient-card border border-border hover:border-primary/50 transition-all duration-300 hover-lift hover-glow"
+              className="
+                group relative
+                p-6 md:p-8
+                rounded-xl
+                gradient-card
+                border border-border
+                transition-all duration-300
+                hover:border-primary/50 hover-lift hover-glow
+              "
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
