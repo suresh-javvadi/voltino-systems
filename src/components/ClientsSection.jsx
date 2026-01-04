@@ -1,24 +1,28 @@
 const clients = [
-  { name: "Statcon Energiaa", logo: "S" },
-  { name: "Drone Power", logo: "DP" },
-  { name: "Laxven Technologies", logo: "LT" },
-  { name: "XDLinx", logo: "XD" },
-  { name: "Antaris Space", logo: "AS" },
-  { name: "Ananth Technologies", logo: "AT" },
-  { name: "KiMu Robomatics", logo: "KR" },
-  { name: "General Datum", logo: "GD" },
-  { name: "MEPSTRA", logo: "M" },
+  { name: "Statcon Powtech", logo: "/client-logos/statcon-powtech.webp" },
+  {
+    name: "Statcon Electronics",
+    logo: "/client-logos/statcon-electronics.webp",
+  },
+  { name: "Drone Power", logo: "/client-logos/drone-power.webp" },
+  { name: "Laxven Technologies", logo: "/client-logos/laxven.webp" },
+  { name: "XDLinx", logo: "/client-logos/xdlinx-space-labs.webp" },
+  { name: "Antaris Space", logo: "/client-logos/antaris.webp" },
+  { name: "Ananth Technologies", logo: "/client-logos/atl.webp" },
+  { name: "KiMu Robomatics", logo: "/client-logos/kimu.webp" },
+  { name: "General Datum", logo: "/client-logos/general-datum.webp" },
+  { name: "MEPSTRA", logo: "/client-logos/mepstra.webp" },
+  {
+    name: "CHART",
+    logo: "/client-logos/chart.webp",
+  },
 ];
 
 export function ClientsSection() {
   return (
     <section
       id="clients"
-      className="
-        gradient-navy-radial
-        border-t border-border/50
-        py-20 sm:py-24 lg:py-28
-      "
+      className="gradient-navy-radial border-t border-border/50 py-20 sm:py-24 lg:py-28"
     >
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -32,35 +36,56 @@ export function ClientsSection() {
           </p>
         </div>
 
-        {/* Clients Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-3 sm:gap-4 md:gap-6">
-          {clients.map((client) => (
-            <div
-              key={client.name}
-              className="
-                group
-                flex flex-col items-center justify-center
-                p-3 sm:p-4
-                rounded-lg
-                bg-secondary/30
-                border border-border
-                transition-all duration-300
-                hover:border-primary/30
+        {/* Marquee */}
+        <div className="w-full overflow-hidden py-12 [mask-image:linear-gradient(to_right,transparent_0,white_20%,white_80%,transparent_100%)]">
+          <div
+            className="
+                inline-flex animate-marquee items-center gap-8 whitespace-nowrap
+                pr-8
+                [--marquee-duration:45s]
+                [&:has(.client-card:hover)]:[animation-play-state:paused]
               "
-            >
-              {/* Logo */}
-              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                <span className="text-xs sm:text-sm md:text-base font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                  {client.logo}
+          >
+            {[...clients, ...clients].map((client, i) => (
+              <div
+                key={`${client.name}-${i}`}
+                className="
+                  client-card
+                  group flex flex-col items-center justify-center
+                  min-w-[14rem] h-32 sm:min-w-[16rem] sm:h-36
+                  p-4 rounded-xl
+                  bg-secondary/30 border border-border/50
+                  hover:border-primary/50
+                  transition-all duration-300 hover:scale-110
+                  shadow-lg hover:shadow-xl
+                  flex-shrink-0
+                "
+              >
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="
+                    h-14 sm:h-16 lg:h-20
+                    w-auto max-w-full object-contain
+                    drop-shadow-md
+                    transition-all duration-300 ease-out
+                    group-hover:-translate-y-1
+                    group-hover:scale-[1.03]
+                    group-hover:drop-shadow-2xl
+                  "
+                />
+
+                <span
+                  className="
+                    mt-2 text-xs sm:text-sm text-muted-foreground
+                    text-center line-clamp-1
+                  "
+                >
+                  {client.name}
                 </span>
               </div>
-
-              {/* Name (desktop only) */}
-              <span className="hidden sm:block mt-1 text-xs text-muted-foreground text-center line-clamp-1">
-                {client.name}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

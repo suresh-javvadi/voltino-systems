@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 @theme {
+  --animate-marquee: marquee var(--marquee-duration, 35s) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 1rem));
+    }
+  }
+}
+
+@theme {
   /* Core colors */
   --color-background: hsl(222 47% 6%);
   --color-foreground: hsl(210 40% 98%);
