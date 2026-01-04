@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const clients = [
   { name: "Statcon Powtech", logo: "/client-logos/statcon-powtech.webp" },
   {
@@ -19,6 +21,14 @@ const clients = [
 ];
 
 export function ClientsSection() {
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    if (!marqueeRef.current) return;
+    const width = marqueeRef.current.scrollWidth / 2;
+    marqueeRef.current.style.setProperty("--marquee-width", `${width}px`);
+  }, []);
+
   return (
     <section
       id="clients"
@@ -39,47 +49,48 @@ export function ClientsSection() {
         {/* Marquee */}
         <div className="w-full overflow-hidden py-12 [mask-image:linear-gradient(to_right,transparent_0,white_20%,white_80%,transparent_100%)]">
           <div
+            ref={marqueeRef}
             className="
-                inline-flex animate-marquee items-center gap-8 whitespace-nowrap
-                pr-8
-                [--marquee-duration:45s]
-                [&:has(.client-card:hover)]:[animation-play-state:paused]
-              "
+    inline-flex animate-marquee items-center gap-8 whitespace-nowrap
+    pr-8
+    [--marquee-duration:45s]
+    [&:has(.client-card:hover)]:[animation-play-state:paused]
+  "
           >
             {[...clients, ...clients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
                 className="
-                  client-card
-                  group flex flex-col items-center justify-center
-                  min-w-[14rem] h-32 sm:min-w-[16rem] sm:h-36
-                  p-4 rounded-xl
-                  bg-secondary/30 border border-border/50
-                  hover:border-primary/50
-                  transition-all duration-300 hover:scale-110
-                  shadow-lg hover:shadow-xl
-                  flex-shrink-0
-                "
+          client-card
+          group flex flex-col items-center justify-center
+          min-w-[14rem] h-32 sm:min-w-[16rem] sm:h-36
+          p-4 rounded-xl
+          bg-secondary/30 border border-border/50
+          hover:border-primary/50
+          transition-all duration-300 hover:scale-110
+          shadow-lg hover:shadow-xl
+          flex-shrink-0
+        "
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
                   className="
-                    h-14 sm:h-16 lg:h-20
-                    w-auto max-w-full object-contain
-                    drop-shadow-md
-                    transition-all duration-300 ease-out
-                    group-hover:-translate-y-1
-                    group-hover:scale-[1.03]
-                    group-hover:drop-shadow-2xl
-                  "
+    h-14 sm:h-16 lg:h-20
+    w-auto max-w-full object-contain
+    drop-shadow-md
+    transition-all duration-300 ease-out
+    group-hover:-translate-y-1
+    group-hover:scale-[1.03]
+    group-hover:drop-shadow-2xl
+  "
                 />
 
                 <span
                   className="
-                    mt-2 text-xs sm:text-sm text-muted-foreground
-                    text-center line-clamp-1
-                  "
+    mt-2 text-xs sm:text-sm text-muted-foreground
+    text-center line-clamp-1
+  "
                 >
                   {client.name}
                 </span>
